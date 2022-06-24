@@ -6,5 +6,9 @@ class User < ApplicationRecord
 
   has_many :friends
 
+  paginates_per 5
+
+  
+
 
 end

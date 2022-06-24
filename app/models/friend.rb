@@ -1,4 +1,5 @@
 class Friend < ApplicationRecord
+    paginates_per 5
     belongs_to :user
 
     validates :first_name, :presence => true

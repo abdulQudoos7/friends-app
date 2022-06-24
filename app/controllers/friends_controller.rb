@@ -10,6 +10,7 @@ class FriendsController < ApplicationController
       @friends = @friends.search_by(@search_term)
     end
 
+    @friends = Friend.order(:first_name).page params[:page]
 
 
   end
