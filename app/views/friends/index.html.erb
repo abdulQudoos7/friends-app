@@ -1,21 +1,37 @@
 <p style="color: green"><%= notice %></p>
-
-<h1>Friends</h1>
-
-<%= paginate @friends %>
-
-
-<%= form_tag(friends_path, method: :get) do %>
-  <%= text_field_tag :search, @search_term, placeholder: "Search ..." %>
-  <%= submit_tag "Search" %>
-<% end %>
-
-<div id="friends">
-  <% @friends.each do |friend| %>
-    <%= render friend %>
-    <p>
-      <%= link_to "Show this friend", friend %>
-    </p>
+<div class="row d-flex">
+  <h1>Friends</h1>
+  <%= form_tag(friends_path, method: :get) do %>
+    <%= text_field_tag :search, @search_term, placeholder: "Search ..." %>
+    <%= submit_tag "Search" %>
   <% end %>
 </div>
-<%# <%= link_to "New friend", new_friend_path %>
+<div class="row mt-3" >
+  <div id="friends">
+    <table class="table table-dark table-hover">
+      <thead>
+        <tr>
+          <th>Firstname</th>
+          <th>Lastname</th>
+          <th>Phone</th>
+          <th>Email</th>
+          <th>Address</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <% @friends.each do |friend| %>
+        <tbody>
+          <tr>
+            <td><%= friend.first_name %></td>
+            <td><%= friend.last_name %></td>
+            <td><%= friend.phone %></td>
+            <td><%= friend.email %></td>
+            <td><%= friend.address %></td>
+            <td><%= link_to "Show this friend", friend, class: "btn btn-outline-light" %></td>
+          </tr>
+        </tbody>
+      <% end %>
+    </table>
+  </div>
+</div>
+<%= paginate @friends %>

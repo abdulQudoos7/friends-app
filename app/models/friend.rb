@@ -1,5 +1,5 @@
 class Friend < ApplicationRecord
-    paginates_per 5
+    
     belongs_to :user
 
     validates :first_name, :presence => true
@@ -13,6 +13,6 @@ class Friend < ApplicationRecord
         where "LOWER(first_name) LIKE :search_term OR LOWER(last_name) LIKE :search_term ", search_term: "%#{search_term.downcase}"
     end
 
-
+    paginates_per 5
 
 end

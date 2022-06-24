@@ -44,6 +44,8 @@ gem "bootsnap", require: false
 gem 'devise'
 gem 'pry', '~> 0.14.1'
 gem 'kaminari'
+gem "cssbundling-rails"
+
 # Use Sass to process CSS
 # gem "sassc-rails"
 
