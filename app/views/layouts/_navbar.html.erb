@@ -6,6 +6,9 @@
 <p><%= link_to "Friends", friends_path%></p>
 <%= link_to "New friend", new_friend_path %>
 <%= button_to "LogOut", destroy_user_session_path, method: :delete%>
+
+
+
 <%else%>
 <%= link_to "LogIn", user_session_path%>
 <%= link_to "Create Accout", new_user_registration_path%>

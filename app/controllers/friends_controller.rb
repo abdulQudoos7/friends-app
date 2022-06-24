@@ -4,7 +4,14 @@ class FriendsController < ApplicationController
  
   def index
     @friends = current_user.friends.all
-    # @friends = Friend.all
+    
+    if params[:search]
+      @search_term = params[:search]
+      @friends = @friends.search_by(@search_term)
+    end
+
+
+
   end
 
   def show
