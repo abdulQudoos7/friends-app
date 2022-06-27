@@ -1,7 +1,7 @@
 class FriendsController < ApplicationController
   before_action :set_friend, only: %i[ show edit update destroy ]
 
- 
+
   def index
     @friends = Friend.order(:first_name).page params[:page]
     # @friends = current_user.friends.all

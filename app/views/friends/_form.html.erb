@@ -13,32 +13,32 @@
 
   <div>
     <%= form.label :first_name, style: "display: block" %>
-    <%= form.text_field :first_name %>
+    <%= form.text_field :first_name, class: "form-control my-2" %>
   </div>
 
   <div>
     <%= form.label :last_name, style: "display: block" %>
-    <%= form.text_field :last_name %>
+    <%= form.text_field :last_name, class: "form-control my-2" %>
   </div>
 
   <div>
     <%= form.label :email, style: "display: block" %>
-    <%= form.text_field :email %>
+    <%= form.text_field :email, class: "form-control my-2" %>
   </div>
 
   <div>
     <%= form.label :phone, style: "display: block" %>
-    <%= form.text_field :phone %>
+    <%= form.text_field :phone, class: "form-control my-2" %>
   </div>
 
   <div>
     <%= form.label :address, style: "display: block" %>
-    <%= form.text_field :address %>
+    <%= form.text_field :address, class: "form-control my-2" %>
   </div>
 
   
 
   <div>
-    <%= form.submit %>
+    <%= form.submit class: "btn btn-dark mt-3" %>
   </div>
 <% end %>
