@@ -3,7 +3,7 @@ class FriendsController < ApplicationController
 
 
   def index
-    @friends = Friend.order(:first_name).page params[:page]
+    @friends = current_user.friends.order(:first_name).page params[:page]
     # @friends = current_user.friends.all
     if params[:search]
       @search_term = params[:search]

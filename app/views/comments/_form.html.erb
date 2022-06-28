@@ -1,0 +1,14 @@
+<h2 class="text-center">Add Comments</h2>
+<%= form_with model: [@friend, @friend.comments.build] do |form| %>
+
+    <%# form.label :commenter %>
+    <%#= form.text_field :commenter, class: "form-control my-2"  %>
+    
+    <p>
+    <% form.label :Comment %>
+    <%= form.text_area :body, class: "form-control my-2"  %>
+    </p>
+    <p>
+    <%= form.submit class: "btn btn-primary" %>
+    </p>
+<%end%>

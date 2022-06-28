@@ -1,10 +1,22 @@
 <p style="color: green"><%= notice %></p>
-<div class="mt-5" ></div>
-<%= render @friend %>
-
-<div>
-  <%= link_to "Edit this friend", edit_friend_path(@friend), class: "link-info text-decoration-none" %> |
-  <%= link_to "Back to friends", friends_path, class: "link-info text-decoration-none "  %>
-
-  <%= button_to "Destroy this friend", @friend, method: :delete, class: "btn btn-outline-danger mt-2" %>
+<div class="mt-5 d-flex">
+  <div class="col-4">
+    <%= render @friend %>
+    <div>
+      <%= link_to "Edit this friend", edit_friend_path(@friend), class: "link-info text-decoration-none" %> |
+      <%= link_to "Back to friends", friends_path, class: "link-info text-decoration-none "  %>
+      <%= button_to "Destroy this friend", @friend, method: :delete, class: "btn btn-outline-danger mt-2" %>
+    </div>
+  </div>
+  <div class="col-8">
+    <%# Addng Comments Section %>
+    <div>
+      <%= render "comments/form" %>
+    </div>
+    <%# Comments Section %>
+    <div class="">
+      <%= render "comments/comment" %>
+    </div>
+  </div>
 </div>
+
