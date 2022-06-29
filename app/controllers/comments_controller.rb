@@ -3,7 +3,6 @@ class CommentsController < ApplicationController
     def create
     @friend = Friend.find(params[:friend_id])
     @comment = @friend.comments.create(comment_params)
-    # @comment.friend = current_user.id
 
     if @comment.save
         flash[:notice] = "comment has been created"
@@ -12,7 +11,6 @@ class CommentsController < ApplicationController
         flash[:alert] = "comment has not been created"
         redirect_to friend_path(@friend)
     end
-    # binding.pry
     
     end
 
