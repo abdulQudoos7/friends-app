@@ -1,0 +1,17 @@
+<div class="container">
+  <h1 class="text-center mt-4">Admin Dashboard</h1>
+  <h3 class="text-center mt-3">Admin</h3>
+  <%= render "admin/nav_links" %>
+  <table class="table table-dark table-hover mt-5">
+    <thead>
+      <tr>
+        <th>Current Admin : <%= current_user.email %></th>
+        <th>Total Admins are : <%= @users.admin.count %></th>
+        <th>Total Users are : <%= @users.count %></th>
+        <th>Total Friends are : <%= @friends.count %></th>
+        <th>Total Comments are : <%= @comments.count %></th>
+      </tr>
+    </thead>
+  </table>
+</div>
+</div>

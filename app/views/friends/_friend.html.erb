@@ -1,17 +1,14 @@
 <div id="<%= dom_id friend %>">
-
   <div class="card mb-4" style="width: 18rem;">
-  <%= image_tag "User-avatar.svg.png"%>
-  <div class="card-body">
-    <h5 class="card-title"><%= friend.first_name %> <%= friend.last_name %></h5>
-    <p class="card-text"><%= image_tag "home.svg"%><%= friend.address %></p>
+    <%= image_tag "User-avatar.svg.png"%>
+    <div class="card-body">
+      <h5 class="card-title"><%= friend.first_name %> <%= friend.last_name %></h5>
+      <p class="card-text"><%= image_tag "home.svg"%><%= friend.address %></p>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item"><%= image_tag "mail.svg"%><%= friend.email %></li>
+      <li class="list-group-item"><%= image_tag "phone.svg"%><%= friend.phone %></li>
+      <li class="list-group-item"><%= image_tag "user.svg"%><%= friend.id %></li>
+    </ul>
   </div>
-  <ul class="list-group list-group-flush">
-    <li class="list-group-item"><%= image_tag "mail.svg"%><%= friend.email %></li>
-    <li class="list-group-item"><%= image_tag "phone.svg"%><%= friend.phone %></li>
-    <li class="list-group-item"><%= image_tag "user.svg"%><%= friend.id %></li>
-  </ul>
 </div>
-  
-</div>
-

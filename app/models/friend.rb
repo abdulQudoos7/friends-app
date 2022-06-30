@@ -1,5 +1,6 @@
 class Friend < ApplicationRecord
-    
+    # include PgSearch::Model
+
     belongs_to :user
     has_many :comments, dependent: :destroy
 
@@ -15,5 +16,7 @@ class Friend < ApplicationRecord
     end
 
     paginates_per 5
+
+    # pg_search_scope :search_by_first_name, against:[:first_name]
 
 end

@@ -18,7 +18,7 @@
           <%= link_to "New Friend", new_friend_path, :class => "nav-link" %>
         </li>
         <li class="nav-item">
-            
+            <%= link_to "Admin_Dashboard", admin_path, :class => "nav-link" if current_user.admin? %>
         </li>
         <div class="d-flex">
         <%= button_to "LogOut", destroy_user_session_path, method: :delete, class: "btn btn-danger" %>

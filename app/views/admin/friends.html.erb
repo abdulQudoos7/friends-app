@@ -1,0 +1,38 @@
+<div class="container">
+  <h1 class="text-center mt-4">Admin Dashboard</h1>
+  <h3 class="text-center mt-3">Friends</h3>
+  <%= render "admin/nav_links" %>
+  <div class="row mt-5">
+    <div id="friends">
+    <table class="table table-dark table-hover">
+        <thead>
+        <tr>
+            <th>User ID</th>
+            <th>Friend ID</th>
+            <th>Firstname</th>
+            <th>Lastname</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>Address</th>
+            <th>Action</th>
+            
+        </tr>
+        </thead>
+        <% @friends.each do |friend| %>
+        <tbody>
+            <tr>
+            <td><%= friend.user_id%></td>
+            <td><%= friend.id%></td>
+            <td><%= friend.first_name %></td>
+            <td><%= friend.last_name %></td>
+            <td><%= friend.phone %></td>
+            <td><%= friend.email %></td>
+            <td><%= friend.address %></td>
+            <td><%= link_to "Show Details", friend, class: "btn btn-outline-light" %></td>
+            </tr>
+        </tbody>
+        <% end %>
+    </table>
+    </div>
+  </div>
+</div>
