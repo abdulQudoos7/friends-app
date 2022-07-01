@@ -6,6 +6,7 @@
     <table class="table table-dark table-hover">
       <thead>
         <tr>
+          <th>ID</th>
           <th>User</th>
           <th>Comment</th>
           <th>Action</th>
@@ -14,6 +15,7 @@
       <tbody>
         <% @comments.each do |comment| %>
           <tr>
+            <td><%= comment.id %></td>
             <td><%= comment.commenter %></td>
             <td><%= comment.body %></td>
             <td><%= link_to "delete", [comment.friend, comment], data:

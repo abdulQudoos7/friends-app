@@ -10,12 +10,13 @@
         <th>User Role</th>
       </tr>
     </thead>
-    <% @users.each do |user| %>
+    <% @user.each do |user| %>
       <tbody>
         <tr>
           <td><%= user.id%></td>
           <td><%= user.email%></td>
           <td><%= user.role %></td>
+          <td><%= link_to "Edit", edit_admin_user_path(@user), class: "btn btn-outline-warning" %> </td>
         </tr>
       </tbody>
     <% end %>

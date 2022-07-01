@@ -1,0 +1,11 @@
+<%= form_with(model: user) do |form| %>
+
+  <div>
+    <%= form.label :role, style: "display: block" %>
+    <%= form.text_field :role, class: "form-control my-2" %>
+  </div> 
+
+  <div>
+    <%= form.submit class: "btn btn-dark mt-3" %>
+  </div>
+<% end %>

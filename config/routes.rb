@@ -3,9 +3,13 @@ Rails.application.routes.draw do
   get 'admin', to: 'admin#index'
   get 'admin/friends'
   get 'admin/comments'
-  get 'admin/users'
   get 'admin/show_post'
   end
+
+  namespace :admin do
+    resources :users, only: [:index, :edit, :update]
+  end
+
   devise_for :users
   # resources :friends
   resources :friends do

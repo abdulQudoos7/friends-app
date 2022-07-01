@@ -18,6 +18,9 @@
           <%= link_to "New Friend", new_friend_path, :class => "nav-link" %>
         </li>
         <li class="nav-item">
+          <%= link_to "Edit", edit_user_registration_path(@user), class: "btn btn-outline-warning" %>
+        </li>
+        <li class="nav-item">
             <%= link_to "Admin_Dashboard", admin_path, :class => "nav-link" if current_user.admin? %>
         </li>
         <div class="d-flex">

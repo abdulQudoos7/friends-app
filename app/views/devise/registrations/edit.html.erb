@@ -31,6 +31,13 @@
     <%= f.password_field :current_password, autocomplete: "current-password" %>
   </div>
 
+<% if current_user.admin? %>
+  <div class="field">
+    <%= f.label :role %><br />
+    <%= f.text_field :role, class: "form-control my-2" %>
+  </div>
+  <% end %>
+
   <div class="actions">
     <%= f.submit "Update" %>
   </div>
