@@ -4,12 +4,18 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
           :recoverable, :rememberable, :validatable
 
+
+  # associations
   has_many :friends
 
+  # pagination
   paginates_per 5
 
+  # enum
   enum role: [:user, :admin]
 
 
+  # PgSearch
+  
 
 end

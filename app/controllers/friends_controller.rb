@@ -5,9 +5,9 @@ class FriendsController < ApplicationController
   def index
     @friends = current_user.friends.order(:first_name).page params[:page]
     # @friends = current_user.friends.all
-    if params[:search]
-      @search_term = params[:search]
-      @friends = @friends.search_by(@search_term)
+    if params[:search].present?
+      # @search_term = params[:search]
+      @friends = Friend.search(params[:search]).page params[:page]
     end
 
     

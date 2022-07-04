@@ -1,22 +1,26 @@
 class Friend < ApplicationRecord
-    # include PgSearch::Model
 
-    belongs_to :user
-    has_many :comments, dependent: :destroy
+  # associations
+  belongs_to :user
+  has_many :comments, dependent: :destroy
 
-    validates :first_name, :presence => true
-    validates :last_name, :presence => true
-    validates :email, :presence => true, :uniqueness => true
-    validates :phone, :presence => true, :uniqueness => true,
-            length: { minimum: 11 }
-    validates :address, :presence => true
+  # validations
+  validates :first_name, :presence => true
+  validates :last_name, :presence => true
+  validates :email, :presence => true, :uniqueness => true
+  validates :phone, :presence => true, :uniqueness => true,
+                    length: { minimum: 11 }
+  validates :address, :presence => true
 
-    def self.search_by(search_term)
-        where "LOWER(first_name) LIKE :search_term OR LOWER(last_name) LIKE :search_term ", search_term: "%#{search_term.downcase}"
-    end
+  # customsearch
+  # def self.search_by(search_term)
+  #     where "LOWER(first_name) LIKE :search_term OR LOWER(last_name) LIKE :search_term ", search_term: "%#{search_term.downcase}"
+  # end
 
-    paginates_per 5
+  # pagination
+  paginates_per 5
 
-    # pg_search_scope :search_by_first_name, against:[:first_name]
-
+  # pg_search
+  include PgSearch::Model
+  pg_search_scope :search, against: [:first_name, :last_name], using: { tsearch: { any_word: true } }
 end

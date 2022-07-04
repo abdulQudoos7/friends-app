@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get 'admin/comments'
   get 'admin/show_post'
   end
+  resources :search, only: [:index]
 
   namespace :admin do
     resources :users
