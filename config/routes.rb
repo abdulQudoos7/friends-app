@@ -1,10 +1,14 @@
 Rails.application.routes.draw do
   authenticated :user, ->(user){user.admin?} do
+    
   get 'admin', to: 'admin#index'
   get 'admin/friends'
   get 'admin/comments'
   get 'admin/show_post'
+
   end
+
+
   resources :search, only: [:index]
 
   namespace :admin do

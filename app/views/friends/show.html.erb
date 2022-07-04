@@ -6,21 +6,25 @@
     <% if current_user.id == @friend.user_id || current_user.admin? %>
     <div>
       <%= link_to "Edit this friend", edit_friend_path(@friend), class: "link-info text-decoration-none" %> |
-      <%= link_to "Back to friends", friends_path, class: "link-info text-decoration-none "  %>
-      <%= button_to "Destroy this friend", @friend, method: :delete, class: "btn btn-outline-danger mt-2" %>
+      <%= link_to "Back to friends", friends_path, class: "link-info text-decoration-none " %>
+      <%= button_to "Destroy this friend", @friend, method: :delete, class: "btn btn-outline-danger my-2" %>
     </div>
-    <%end%>
+    <% end %>
     
   </div>
+  
+  
   <div class="col-8">
-    <%# Addng Comments Section %>
+    <% # Addng Comments Form %>
     <div>
       <%= render "comments/form" %>
     </div>
-    <%# Comments Section %>
+    <% # Comments Section %>
     <div class="">
       <%= render "comments/comment" %>
     </div>
   </div>
+
+  
 </div>
 

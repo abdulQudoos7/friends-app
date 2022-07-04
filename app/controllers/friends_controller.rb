@@ -54,10 +54,17 @@ class FriendsController < ApplicationController
   def destroy
     @friend.destroy
 
-    respond_to do |format|
-      format.html { redirect_to friends_url, notice: "Friend was successfully destroyed." }
-      format.json { head :no_content }
-    end
+    if current_user.admin?
+      respond_to do |format|
+        format.html { redirect_to admin_friends_url, notice: "Friend was successfully destroyed." }
+        format.json { head :no_content }
+      end
+      else
+        respond_to do |format|
+          format.html { redirect_to friends_url, notice: "Friend was successfully destroyed." }
+          format.json { head :no_content }
+        end
+      end
   end
 
   private
