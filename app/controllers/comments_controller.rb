@@ -24,6 +24,10 @@ class CommentsController < ApplicationController
     # binding.pry
   end
 
+  def show
+    
+  end
+
   private
 
   def comment_params
