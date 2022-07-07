@@ -1,8 +1,7 @@
 class CommentsController < ApplicationController
   def create
-    @friend = Friend.find(params[:friend_id])
+    @friend = Friend.friendly.find(params[:friend_id])
     @comment = @friend.comments.create(comment_params)
-
     if @comment.save
       flash[:notice] = "comment has been created"
       redirect_to friend_path(@friend)
@@ -13,7 +12,7 @@ class CommentsController < ApplicationController
   end
 
   def destroy
-    @friend = Friend.find(params[:friend_id])
+    @friend = Friend.friendly.find(params[:friend_id])
     @comment = @friend.comments.find(params[:id])
     @comment.destroy
     # redirect_to friend_path(@friend), status: 303
@@ -22,7 +21,6 @@ class CommentsController < ApplicationController
     else
       redirect_to friend_path(@friend)
     end
-
     # binding.pry
   end
 

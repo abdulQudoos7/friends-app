@@ -1,8 +1,13 @@
 class Friend < ApplicationRecord
+  # friendly_id
+  extend FriendlyId
+  friendly_id :id, use: :slugged
 
   # associations
   belongs_to :user
   has_many :comments, dependent: :destroy
+  has_many :degrees, dependent: :destroy
+  accepts_nested_attributes_for :degrees, reject_if: :all_blank, allow_destroy: true
 
   # validations
   validates :first_name, :presence => true

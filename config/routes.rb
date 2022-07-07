@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :degrees
   authenticated :user, ->(user){user.admin?} do
     
   get 'admin', to: 'admin#index'
@@ -10,7 +11,7 @@ Rails.application.routes.draw do
 
 
   resources :search, only: [:index]
-
+  
   namespace :admin do
     resources :users
   end

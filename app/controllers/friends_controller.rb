@@ -27,7 +27,6 @@ class FriendsController < ApplicationController
   def create
 
     @friend = current_user.friends.new(friend_params)
-
     respond_to do |format|
       if @friend.save
         format.html { redirect_to friend_url(@friend), notice: "Friend was successfully created." }
@@ -40,6 +39,7 @@ class FriendsController < ApplicationController
   end
 
   def update
+    # binding.pry
     respond_to do |format|
       if @friend.update(friend_params)
         format.html { redirect_to friend_url(@friend), notice: "Friend was successfully updated." }
@@ -49,6 +49,7 @@ class FriendsController < ApplicationController
         format.json { render json: @friend.errors, status: :unprocessable_entity }
       end
     end
+    # binding.pry
   end
 
   def destroy
@@ -69,10 +70,12 @@ class FriendsController < ApplicationController
 
   private
     def set_friend
-      @friend = Friend.find(params[:id])
+      @friend = Friend.friendly.find(params[:id])
     end
 
     def friend_params
-      params.require(:friend).permit(:first_name, :last_name, :email, :phone, :address, :user_id)
+      params.require(:friend).permit(:first_name, :last_name, :email, :phone, :address, :user_id, degrees_attributes: [:id, :degree_name, :description])
+
     end
+
 end

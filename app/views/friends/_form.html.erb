@@ -36,9 +36,17 @@
     <%= form.text_field :address, class: "form-control my-2" %>
   </div>
 
-  
+  <h3>Add Education</h3>
+  <div>
+    <%= form.fields_for :degrees do |degree| %>
+    <%= render 'degree_fields', f: degree %>
+    <% end %>
+    <%= link_to_add_association "Add education", form, :degrees, class: "btn btn-info" %>
+    
+  </div>
 
   <div>
     <%= form.submit class: "btn btn-dark mt-3" %>
   </div>
+  <%# binding.pry %>
 <% end %>

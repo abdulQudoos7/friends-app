@@ -10,5 +10,14 @@
       <li class="list-group-item"><%= image_tag "phone.svg"%><%= friend.phone %></li>
       <li class="list-group-item"><%= image_tag "user.svg"%><%= friend.id %></li>
     </ul>
+
+    <h3>Education</h3>
+    <ul class="list-group list-group-flush">
+      <% for @degree in @friend.degrees %>
+      <li class="list-group-item"> <strong>Degree In :</strong> <%= @degree.degree_name %></li>
+      <li class="list-group-item"> <strong>Institute :</strong> <%= @degree.description %></li>
+      <% end %>
+    </ul>
+
   </div>
 </div>
