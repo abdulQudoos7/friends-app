@@ -15,6 +15,7 @@ gem 'pg_search'
 gem "cocoon"
 gem "jquery-rails"
 gem 'friendly_id'
+gem 'trix-rails', require: 'trix'
 # gem "mini_magic"
 
 # Use the Puma web server [https://github.com/puma/puma]
