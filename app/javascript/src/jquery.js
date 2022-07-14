@@ -5,6 +5,7 @@ window.$ = jquery
 // jquery Goes here
 
 
-// $(function(){
-//   console.log("jquery is running")
-// })
+$(function(){
+  console.log("jquery is running")
+  console.log(2+3)
+})

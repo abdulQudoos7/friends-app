@@ -6,6 +6,6 @@ import "trix"
 import "@rails/actiontext"
 import "./src/jquery"
 import "@nathanvda/cocoon"
-
+import "cocoon"
 
 

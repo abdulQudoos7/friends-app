@@ -39,9 +39,9 @@
   <h3>Add Education</h3>
   <div>
     <%= form.fields_for :degrees do |degree| %>
-    <%= render 'degree_fields', f: degree %>
+      <%= render 'degree_fields', form: degree %>
     <% end %>
-    <%= link_to_add_association "Add education", form, :degrees, class: "btn btn-info" %>
+    <%= link_to_add_association "Add Education", form, :degrees, class: "btn btn-info" %>
     
   </div>
 
