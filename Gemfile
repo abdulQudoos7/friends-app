@@ -12,9 +12,14 @@ gem 'sprockets-rails'
 # Use postgresql as the database for Active Record
 gem 'cocoon'
 gem 'friendly_id'
+<<<<<<< HEAD
 gem 'jquery-rails'
 gem 'pg', '~> 1.1'
 gem 'pg_search'
+=======
+gem 'trix-rails', require: 'trix'
+# gem "mini_magic"
+>>>>>>> f3c4818433d1b4c8b45e4cd95f098e59af191d7c
 
 # Use the Puma web server [https://github.com/puma/puma]
 gem 'puma', '~> 5.0'
