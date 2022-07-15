@@ -1,11 +1,11 @@
-import jquery from "jquery"
-window.jQuery = jquery
-window.$ = jquery
+// import jquery from "jquery"
+// window.jQuery = jquery
+// window.$ = jquery
 
-// jquery Goes here
+// // jquery Goes here
 
 
-$(function(){
-  console.log("jquery is running")
-  console.log(2+3)
-})
+// $(function(){
+//   console.log("jquery is running")
+//   console.log(2+3)
+// })
